@@ -1,0 +1,36 @@
+pr_guard:
+  script:
+    - |
+        if [ $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'main' ]
+        then
+          if [ $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME != 'stage' ]
+          then
+            echo "Requests only from stage are allowed to main"
+            exit 1
+          fi
+        fi
+        if [ $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == 'stage' ]
+        then
+          if [ $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME != 'dev' ]
+          then
+            echo "Requests only from dev are allowed to stage"
+            exit 2
+          fi
+        fi
+        exit 0
+  only:
+    - merge_requests
+
+deploy-prod:
+  image: docker:latest
+  stage: build
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u $DO_DEV_TOKEN -p $DO_DEV_TOKEN registry.digitalocean.com
+  script:
+    - docker build -t namer-backend .
+    - docker tag namer-backend registry.digitalocean.com/mov3r-container/namer-backend
+    - docker push registry.digitalocean.com/mov3r-container/namer-backend
+  only:
+    - main

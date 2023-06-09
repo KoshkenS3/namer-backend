@@ -1,0 +1,10 @@
+printWidth: 150 # Максимальное кол-во символов в строке
+tabWidth: 2 # Пробелов в Табе
+singleQuote: true # Использовать одинарные кавычки
+trailingComma: all # Использовать запятые где возможно
+arrowParens: always # Стрелочные ф-ии выглядят (x) => x
+semi: false
+overrides:
+  - files: '*.ts' # Проверка файлов *.ts
+    options:
+      parser: typescript # Язык в файлах *.ts

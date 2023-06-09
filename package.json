@@ -1,0 +1,41 @@
+{
+  "name": "namer-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "nest build",
+    "build:lint": "tslint -c tslint.json -p tsconfig.json --fix",
+    "start": "NODE_ENV=production nest start",
+    "start:dev": "nest start --watch",
+    "start:repl": "nest start --entryFile /repl"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@nestjs/common": "^9.4.2",
+    "@nestjs/config": "^2.3.2",
+    "@nestjs/core": "^9.4.2",
+    "@nestjs/mongoose": "^9.2.2",
+    "@nestjs/platform-express": "^9.4.2",
+    "@nestjs/schedule": "^2.2.2",
+    "@nestjs/swagger": "^6.3.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.14.0",
+    "cron": "^2.3.1",
+    "everscale-inpage-provider": "^0.3.61",
+    "everscale-standalone-client": "^2.1.19",
+    "mongoose": "^7.2.0",
+    "nest-winston": "^1.9.2",
+    "uuid": "^9.0.0",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^9.5.0",
+    "@types/cron": "^2.0.1",
+    "@types/node": "^20.2.3",
+    "@types/uuid": "^9.0.1",
+    "ts-node": "^10.9.1"
+  }
+}

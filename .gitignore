@@ -1,0 +1,17 @@
+node_modules
+dist
+generated
+.env
+.aptos
+config.yaml
+text.txt
+.env.dev
+.env.stage
+.env.docker
+data
+test.ts
+config.json
+.env.my
+config-my.json
+config.dev.json
+config.stage.json

@@ -1,2 +1,1 @@
-# namer-backend
-namer-backend
+NAMER API
